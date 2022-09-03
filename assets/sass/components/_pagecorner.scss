@@ -1,0 +1,78 @@
+.social-iconss {
+  left: 2%;
+  animation: moveRight 1s ease-in-out 1.7s backwards;
+  @extend %page-corner-main;
+  @include respond(tab-port) {
+    animation: unset;
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1
+  }
+
+  ul {
+    @include respond(tab-port) {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    padding: 1rem 1rem;
+    &__link {
+      display: inline-block;
+      color: var(--primary-sec-color);
+      cursor: pointer;
+      transition: var(--basic-transition);
+      &:hover {
+        color: var(--primary-main-color);
+        transform: translateY(-1rem);
+      }
+      svg {
+        width: 2rem;
+      }
+    }
+  }
+  &:after {
+    @extend %page-corner-after;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}
+
+.email-info {
+  right: 2%;
+  animation: moveRightLeft 1s ease-in-out 1.5s backwards;
+  @include respond(tab-port) {
+    animation: unset;
+    position: absolute;
+    top: 29rem;
+    right: 50%;
+    transform: translate(50%);
+    z-index: -2
+  }
+  @extend %page-corner-main;
+  a {
+    color: var(--primary-sec-color);
+    writing-mode: vertical-rl;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    transition: var(--basic-transition);
+    padding-bottom: 1rem;
+    @include respond(tab-port) {
+      writing-mode: unset;
+    }
+    &:hover {
+      color: var(--primary-main-color);
+      transform: translateY(-1rem);
+    }
+  }
+  &:after {
+    @extend %page-corner-after;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}

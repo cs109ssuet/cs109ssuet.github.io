@@ -1,0 +1,77 @@
+//flex placeholder
+@mixin flex-placeholder($justifycontent, $align-items) {
+  display: flex;
+  justify-content: $justifycontent;
+  align-items: $align-items;
+}
+
+//content holder
+@mixin content-holder($content) {
+  content: $content;
+}
+
+//content holder
+@mixin position-center() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Media Query  Manager
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 78em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media (max-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+  @if $breakpoint == phone-height {
+    @media (max-height: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port-height {
+    @media (max-height: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land-height {
+    @media (max-height: 78em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop-height {
+    @media (max-height: 112.5em) {
+      @content;
+    } //1800px
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

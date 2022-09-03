@@ -1,0 +1,76 @@
+.about-me {
+  font-family: sans-serif;
+  font-weight: 400;
+  @include flex-placeholder(center, center);
+  flex-direction: column;
+  font-size: 1.2rem;
+
+  &__container {
+    max-width: $grid-width;
+
+    &__work {
+      @include respond(tab-port) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2.5rem;
+        column-gap: 2rem;
+      }
+
+      @include respond(phone) {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .mdi {
+        color: var(--primary-main-color);
+        width: 100%;
+        font-size: 7rem;
+      }
+    }
+  }
+}
+
+.about-visual__intro-image {
+  transform: rotate(30%);
+  width: 30rem;
+  position: relative;
+  border-radius: 1rem;
+  align-self: center;
+
+  @include respond(phone) {
+    width: 25rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}
+
+.about-visual {
+  @include flex-placeholder(flex-start, flex-start);
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+  .about-visual__intro {
+    @include respond(tab-land) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.3rem;
+    font-size: 1.2rem;
+    position: relative;
+
+    &__skill:before {
+      content: "≽";
+      margin-right: 1rem;
+      font-size: 1rem;
+      color: var(--primary-main-color);
+    }
+  }
+}

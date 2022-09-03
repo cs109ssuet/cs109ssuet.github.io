@@ -1,0 +1,38 @@
+.header {
+  color: var(--white);
+  height: 100vh;
+  position: relative;
+  font-size: 80%;
+ 
+  @include respond(phone) {
+    font-size: 65%;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 4em;
+    left: 4em;
+    width: 20em;
+    display: flex;
+
+    @include respond(phone) {
+      left: 2em;
+    }
+
+    &__primary {
+      width: 100%;
+      animation: moveRight 1s ease-in-out;
+    }
+
+    &__sub {
+      width: 8em;
+      animation: spin 2s ease-in-out 1;
+      position: absolute;
+      transform: rotate(-50%);
+      top: -2em;
+      right: -8em;
+      overflow-x: hidden;
+    }
+  }
+}
+
