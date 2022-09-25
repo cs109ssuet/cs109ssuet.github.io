@@ -1,0 +1,51 @@
+.fiverr__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fiverr__reviews {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  @include respond(tabl-land) {
+    &:nth-child(4) {
+      display: none;
+    }
+  }
+
+  &--item {
+    margin: 0.3rem;
+    width: 23rem;
+    cursor: pointer;
+    border-radius: 10px;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin: 0.3rem 0.9rem;
+    }
+
+    @include respond(phone) {
+      margin: 0.2rem;
+      border-radius: 5px;
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .fiverr__reviews:nth-child(4) {
+    display: block;
+    gap: 2rem;
+  }
+}
